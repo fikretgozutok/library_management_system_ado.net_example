@@ -43,4 +43,3 @@ project.lock.json
 # Exclude configuration files with sensitive data
 App.config
 Web.config
-
