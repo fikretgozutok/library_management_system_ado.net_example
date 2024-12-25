@@ -1,9 +1,9 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess;
 using DataAccess.Concrete.ADO.NET;
 using Entitites.Concrete;
 using Microsoft.Data.SqlClient;
 
-public partial class BookDal
+namespace DataAccess.Concrete
 {
     public class AuthorDal : IRepository<Author>
     {
@@ -49,7 +49,8 @@ public partial class BookDal
 
                 if (reader.Read())
                 {
-                    return new Author{
+                    return new Author
+                    {
                         Name = reader["Name"].ToString()!
                     };
                 }
@@ -90,4 +91,6 @@ public partial class BookDal
             }
         }
     }
+
 }
+
